@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { Link, Outlet } from "react-router-dom";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1 className=" font-extrabold text-4xl mb-10">این یک متن است</h1>
+      <nav className="border-b-2 border-rose-500 pb-5">
+        <Link to="/about " className="m-4 text-xl active:border active: border-rose-500 focus:border  ">
+          درباره ما
+        </Link>
+        <Link to="/books" className="m-4 text-xl">
+          کتاب ها
+        </Link>
+      </nav>
+      <Outlet />
     </div>
   );
 }
